@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+  <body>
+    <h1>Test kalkulator (mark 2)</h1>
+    <label for="angka1">ANGKA PERTAMA</label>
+    <input type="number" id="angka1" placeholder="Contoh: 1" />
+    <br /><br />
+    <label for="angka2">ANGKA KEDUA</label>
+    <input type="number" id="angka2" placeholder="Contoh: 2" />
+    <br /><br />
+    <h2>Operasi jumlah</h2>
+    <div class="operasi">
+      <button id="tambah">TAMBAH</button>
+      <button id="kurang">KURANG</button>
+      <button id="kali">KALI</button>
+      <button id="bagi">BAGI</button>
+    </div>
+    <p id="hasil">HASIL: -</p>
+    <script>
+      function penjumlahan(a, b) {
+        return a + b;
+      }
+      function pengurangan(a, b) {
+        return a - b;
+      }
+      function perkalian(a, b) {
+        return a * b;
+      }
+      function pembagian(a, b) {
+        return a / b;
+      }
+
+      //untuk melakukan operasi penjumlahan dll
+      document.getElementById("tambah").addEventListener("click", function () {
+        let angka1 = parseFloat(document.getElementById("angka1").value);
+        let angka2 = parseFloat(document.getElementById("angka2").value);
+
+        if (isNaN(angka1) || isNaN(angka2)) {
+          document.getElementById("hasil").innerText = "Angka tidak valid";
+        } else {
+          let total = penjumlahan(angka1, angka2);
+          document.getElementById("hasil").innerText =
+            "HASIL DARI PERTAMBAHAN:" + " " + total;
+        }
+      });
+
+      document.getElementById("kurang").addEventListener("click", function () {
+        let angka1 = parseFloat(document.getElementById("angka1").value);
+        let angka2 = parseFloat(document.getElementById("angka2").value);
+
+        if (isNaN(angka1) || isNaN(angka2)) {
+          document.getElementById("hasil").innerText = "Angka tidak valid";
+        } else {
+          let total = pengurangan(angka1, angka2);
+          document.getElementById("hasil").innerText =
+            "HASIL DARI PENGURANGAN:" + " " + total;
+        }
+      });
+
+      document.getElementById("kali").addEventListener("click", function () {
+        let angka1 = parseFloat(document.getElementById("angka1").value);
+        let angka2 = parseFloat(document.getElementById("angka2").value);
+
+        if (isNaN(angka1) || isNaN(angka2)) {
+          document.getElementById("hasil").innerText = "Angka tidak valid";
+        } else {
+          let total = perkalian(angka1, angka2);
+          document.getElementById("hasil").innerText =
+            "HASIL DARI PERKALIAN:" + " " + total;
+        }
+      });
+
+      document.getElementById("bagi").addEventListener("click", function () {
+        let angka1 = parseFloat(document.getElementById("angka1").value);
+        let angka2 = parseFloat(document.getElementById("angka2").value);
+
+        if (isNaN(angka1) || isNaN(angka2)) {
+          document.getElementById("hasil").innerText = "Angka tidak valid";
+        } else {
+          let total = pembagian(angka1, angka2);
+          document.getElementById("hasil").innerText =
+            "HASIL DARI PEMBAGIAN:" + " " + total;
+        }
+      });
+    </script>
+  </body>
+</html>
