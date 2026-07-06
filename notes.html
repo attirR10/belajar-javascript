@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Second Mark Project 01-->
+    <h1>to-do-list</h1>
+    <label for="catat">Kegiatan hari ini</label>
+    <input type="text" id="catat" />
+    <button id="simpan">tambah</button>
+    <div id="ngelist">
+      <ul class="list"></ul>
+    </div>
+    <script>
+      //untuk input
+      document.getElementById("simpan").addEventListener("click", function () {
+        const input = document.getElementById("catat").value;
+        const elemenBaru = document.createElement("li");
+        elemenBaru.textContent = input;
+        document.querySelector(".list").appendChild(elemenBaru);
+      });
+    </script>
+  </body>
+</html>
